@@ -6,7 +6,7 @@ inputs:
 
 implementation:
   container:
-    image: mavencodev/breast_cancer_accuracy:2.0
+    image: mavencodev/breast_cancer_accuracy:3.0
     command: [
       python, print_result.py,
 
