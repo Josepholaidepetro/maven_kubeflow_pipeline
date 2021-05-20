@@ -15,7 +15,7 @@ def download_data(args):
     data = x_train, x_test, y_train, y_test 
         
     #Save the train_data and test_data as a pickle file to be used by the next component.
-    with open((args.data, 'wb') as f:
+    with open(args.data, 'wb') as f:
         pickle.dump(data, f)
 
 if __name__ == '__main__':
