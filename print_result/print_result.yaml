@@ -1,0 +1,17 @@
+name: Prints result
+description: Prints Random Forest Classifier result
+
+inputs:
+- {name: Accuracy, type: Float, description: 'Accuracy metric'}
+
+implementation:
+  container:
+    image: mavencodev/breast_cancer_accuracy:1.0
+    command: [
+      python, print_result.py,
+
+      --accuracy,
+      {inputPath: Accuracy},
+
+
+    ]

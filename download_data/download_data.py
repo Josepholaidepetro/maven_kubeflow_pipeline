@@ -1,4 +1,4 @@
-import json
+import pickle
 
 import argparse
 from pathlib import Path
@@ -10,21 +10,13 @@ def download_data(args):
 
     # Gets and split dataset
     x, y = load_breast_cancer(return_X_y=True)
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25)
 
-    # Creates `data` structure to save and 
-    # share train and test datasets.
-    data = {'x_train' : x_train.tolist(),
-            'y_train' : y_train.tolist(),
-            'x_test' : x_test.tolist(),
-            'y_test' : y_test.tolist()}
-
-    # Creates a json object based on `data`
-    data_json = json.dumps(data)
-
-    # Saves the json object into a file
-    with open(args.data, 'w') as out_file:
-        json.dump(data_json, out_file)
+    data = x_train, x_test, y_train, y_test 
+        
+    #Save the train_data and test_data as a pickle file to be used by the next component.
+    with open((args.data, 'wb') as f:
+        pickle.dump(data, f)
 
 if __name__ == '__main__':
     

@@ -1,5 +1,5 @@
-name: Logistic Regression Classifier
-description: Trains a Logistic Regression Classifier
+name: Random Forest Classifier
+description: Trains a Random Forest Classifier
 
 inputs:
 - {name: Data, type: LocalPath, description: 'Path where data is stored.'}
@@ -8,9 +8,9 @@ outputs:
 
 implementation:
   container:
-    image: mavencodev/breast_cancer_logistic_regression:1.0
+    image: mavencodev/breast_cancer_random_forest:1.0
     command: [
-      python, logistic_regression.py,
+      python, model_training.py,
 
       --data,
       {inputPath: Data},
