@@ -12,7 +12,7 @@ def model_training(args):
     with open(args.data, 'rb') as f:
         data = pickle.load(f)
 
-    data = x_train, x_test, y_train, y_test 
+    x_train, x_test, y_train, y_test  = data 
     
     # Initialize and train the model
     model = RandomForestClassifier(random_state=1)
