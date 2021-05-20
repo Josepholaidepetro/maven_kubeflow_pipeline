@@ -17,4 +17,4 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     
-    model_training(args)
+    print_result(args)
