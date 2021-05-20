@@ -8,7 +8,7 @@ outputs:
 
 implementation:
   container:
-    image: mavencodev/breast_cancer_random_forest:1.0
+    image: mavencodev/breast_cancer_random_forest:2.0
     command: [
       python, model_training.py,
 
