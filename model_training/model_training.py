@@ -1,4 +1,4 @@
-import json
+import pickle
 
 import argparse
 from pathlib import Path
